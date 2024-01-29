@@ -2,16 +2,16 @@
 
 namespace App\Filament\Resources;
 
-use Filament\Forms;
-use App\Models\Post;
-use Filament\Tables;
-use Filament\Forms\Form;
-use Filament\Tables\Table;
-use Filament\Resources\Resource;
-use Illuminate\Database\Eloquent\Builder;
 use App\Filament\Resources\PostResource\Pages;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\PostResource\RelationManagers;
+use App\Models\Post;
+use Filament\Forms;
+use Filament\Forms\Form;
+use Filament\Resources\Resource;
+use Filament\Tables;
+use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class PostResource extends Resource
 {
@@ -57,7 +57,7 @@ class PostResource extends Resource
     {
         return [
             'index' => Pages\ListPosts::route('/'),
-            'create' => CreatePost::route('/create'),
+            'create' => Pages\CreatePost::route('/create'),
             'edit' => Pages\EditPost::route('/{record}/edit'),
         ];
     }
